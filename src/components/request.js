@@ -10,7 +10,19 @@ import{useRef} from 'react';
 function Request() {
   
   let navigate = useNavigate();
-
+  const [errorMessage, setErrorMessage] = React.useState("");
+  const DaysInputRef = [
+    {checked:false,value:''},
+    {checked:false,value:''},
+    {checked:false,value:''},
+    {checked:false,value:''},
+    {checked:false,value:''},
+    {checked:false,value:''},
+    {checked:false,value:''},
+  ];
+  function check(key){
+    DaysInputRef[key].checked=true;
+  }
   const NameInputRef=useRef();
   const EmailInputRef=useRef();
   const AddressInputRef=useRef();
@@ -20,7 +32,13 @@ function Request() {
   const LanguageInputRef=useRef();
   const KidsInputRef=useRef();
   const DateInputRef=useRef();
-  const DaysInputRef=useRef();
+  DaysInputRef[0]=useRef();
+  DaysInputRef[1]=useRef();
+  DaysInputRef[2]=useRef();
+  DaysInputRef[3]=useRef();
+  DaysInputRef[4]=useRef();
+  DaysInputRef[5]=useRef();
+  DaysInputRef[6]=useRef();
 
   function submitHandler(event){
     event.preventDefault();
@@ -33,23 +51,36 @@ function Request() {
     const enteredLanguage=LanguageInputRef.current.value;
     const enteredKids=KidsInputRef.current.value;
     const enteredDate=DateInputRef.current.value;
-    const enteredDays=DaysInputRef.current.value;
 
-    const data={
-      Name: enteredName,
-      Email: enteredEmail,
-      Address:enteredAddress,
-      Landline:enteredLandline,
-      Budget:enteredBudget,
-      Mobile:enteredMobile,
-      Language:enteredLanguage,
-      Kids:enteredKids,
-      Date:enteredDate,
-      Days:enteredDays,
-    };
+    let valid=false;
+    let enteredDays=[];
+    for (let i = 0; i < 7; i++) {
+      if(DaysInputRef[i].current.checked!==false){
+        enteredDays.push(DaysInputRef[i].current.value); 
+        valid=true;
+      }
 
-    console.log(data);
-    navigate('/done');
+    }
+    if(valid)
+    {
+      const data={
+        Name: enteredName,
+        Email: enteredEmail,
+        Address:enteredAddress,
+        Landline:enteredLandline,
+        Budget:enteredBudget,
+        Mobile:enteredMobile,
+        Language:enteredLanguage,
+        Kids:enteredKids,
+        Date:enteredDate,
+        Days:enteredDays,
+      };
+  
+      console.log(data);
+      navigate('/done');
+    }
+    else setErrorMessage("Please select atleast one day!")
+
   }
   return (
     <div className="Request">
@@ -89,7 +120,7 @@ function Request() {
           </div>
           <div class="input-box">
             <span class="details"><img src={require('./images/Budget.jpeg')} alt="Full name"/> </span>
-            <input type="text" placeholder="Budget" required ref={BudgetInputRef}></input>
+            <input type="text" placeholder="Budget                                                                LE" required ref={BudgetInputRef}></input>
           </div>
         <div class="input-box">
           <span class="details"><img src={require('./images/Language.jpeg')} alt="Full name"/> </span>
@@ -105,28 +136,34 @@ function Request() {
       </div>
       <div class="input-box">
         <span class="details"><img src={require('./images/Calender.jpeg')} alt="Full name" position='absolute'/> </span>
-        <input type="text" placeholder="Starting Day yyyy/mm/dd" required ref={DateInputRef}></input>
+        <input type="text" placeholder="Starting Day                                        yyyy/mm/dd" required ref={DateInputRef}></input>
       </div>
       </div>
-      <div  className='Days'>
+      <div  className='Days' required>
       <label>
-          <input type="checkbox" value='Saturday' ref={DaysInputRef} /> Saturday
+          <input type="checkbox" value='Saturday' ref={DaysInputRef[0]} checked={check(0)}/> Saturday
       </label>
       <label>
-          <input type="checkbox" value='Sunday' ref={DaysInputRef} /> Sunday
+          <input type="checkbox" value='Sunday' ref={DaysInputRef[1]} checked={check(1)}/> Sunday
       </label>
-    <input type='checkbox' value='monday'>
-    </input>Monday
-    <input type='checkbox' value='tuesday'>
-    </input>Tuesday
-    <input type='checkbox' value='wednesday'>
-    </input>Wednesday
-    <input type='checkbox' value='thursday'>
-    </input>Thursday
-    <input type='checkbox' value='friday'>
-    </input>Friday
+      <label>
+          <input type="checkbox" value='Monday' ref={DaysInputRef[2]} checked={check(2)}/> Monday
+      </label>
+      <label>
+          <input type="checkbox" value='Tuesday' ref={DaysInputRef[3]} checked={check(3)}/> Tuesday
+      </label>
+      <label>
+          <input type="checkbox" value='Wednesday' ref={DaysInputRef[4]} checked={check(4)}/> Wednesday
+      </label>
+      <label>
+          <input type="checkbox" value='Thursday' ref={DaysInputRef[5]} checked={check(5)}/> Thursday
+      </label>
+      <label>
+          <input type="checkbox" value='Friday' ref={DaysInputRef[6]} checked={check(6)}/> Friday
+      </label>
   </div>
       <div class="button"  >
+      {errorMessage && (<p className="error"> {errorMessage} </p>)}
     <input type="submit" value="Request Now"></input>
   </div>
       </form>
