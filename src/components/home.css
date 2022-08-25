@@ -1,0 +1,62 @@
+.container{
+    top: 0px;
+    left: 100px;
+    width: 1920px;
+    height: 1080px;
+    margin-left: 400px;
+    margin-top: 100px;
+  }
+  .container .Logo-box{
+    background: transparent;
+    width:1000px;
+    opacity: 1;
+    margin:0px;
+    display:inline-block;
+    position: absolute;
+    text-decoration: none;
+    left: 100px;
+  }
+  .container .title{
+    text-align: right;
+    font: normal normal bold 50px/64px Arial;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    width:550px;
+    height: 100px;
+    position: absolute;
+    margin-top: 170px;
+    left: 1300px;
+    text-decoration: none;
+  }
+  .container .home-content{
+    text-align: left;
+    font: normal normal bold 30px/64px Arial;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    width:600px;
+    height: 100px;
+    position: absolute;
+    margin-top: 270px;
+    left: 1320px;
+    text-decoration: none;
+  }
+  .container .request{
+    text-align: center;
+    font: normal normal normal 30px/35px Arial;
+    letter-spacing: 0px;
+    color: #0085bac5;
+    opacity: 1;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 470px;
+    left: 1320px;
+    width:400px;
+    height: 65px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    border: none;
+    opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 5px;
+  }
