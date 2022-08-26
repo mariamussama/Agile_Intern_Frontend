@@ -2,7 +2,7 @@ import React from 'react';
 import Nav_bar from './nav_bar';
 import './request.css';
 import ReactDOM from 'react-dom/client';
-import Select from 'react-select';
+import 'react-datepicker/dist/react-datepicker.css';
 import{useNavigate} from "react-router-dom";
 import{useRef} from 'react';
 
@@ -132,14 +132,24 @@ function Request() {
         </div>
       <div class="input-box">
         <span class="details"><img src={require('./images/Kids.jpeg')}alt="Full name"/> </span>
-        <input type="text" placeholder="Kids Age Group" required ref={KidsInputRef}></input>
+        <select required id='ageRange' ref={KidsInputRef}  className='select'>
+            <option value="">Kids Age Group</option>
+            <option value='0-2'> 0-2</option>
+            <option value='3-5'> 3-5</option>
+            <option value='6-10'> 6-10</option>
+            <option value='10-12'> 10-12</option>
+          </select>
       </div>
       <div class="input-box">
         <span class="details"><img src={require('./images/Calender.jpeg')} alt="Full name" position='absolute'/> </span>
-        <input type="text" placeholder="Starting Day                                        yyyy/mm/dd" required ref={DateInputRef}></input>
+        <input type="text" className="Date" placeholder='Starting Day'
+        onFocus={() => (DateInputRef.current.type = "date")} 
+        onBlur={() => (DateInputRef.current.type = "text")}
+        required  ref={DateInputRef}></input>
       </div>
       </div>
       <div  className='Days' required>
+        <div className='title'>Select Working Days</div>
       <label>
           <input type="checkbox" value='Saturday' ref={DaysInputRef[0]} checked={check(0)}/> Saturday
       </label>

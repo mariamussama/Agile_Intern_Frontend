@@ -17,7 +17,7 @@
 }
 .req_container{
     background-color: rgb(255, 255, 255);
-    height: 700px;
+    height: 750px;
     width: 950px;
     margin: auto;
     margin-bottom: 80px;
@@ -107,10 +107,50 @@
     outline: none;
     font-size: 16px;
     border-radius: 5px;
+    padding-left: 14px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+  form .input-box option{
+    font: normal normal normal 17px/32px Arial;
+  }
+  form .Date{
+    height: 50px;
+    width: 84%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
     padding-left: 15px;
     border: 1px solid #ccc;
     border-bottom-width: 2px;
     transition: all 0.3s ease;
+  }
+  form .Days .title{
+    font: normal normal normal 18px/32px Arial;
+    letter-spacing: 0px;
+    color: #6e6b6bde;
+    margin-bottom: -17px;
+    text-align: left;
+    margin-left: 35px;
+    margin-top: 35px;
+  }
+  
+  form .Days label{
+    margin: 15px;
+    font: normal normal normal 17px/32px Arial;
+    color: #323131;
+  }
+  form .Days input{
+    margin-top: 40px;
+    height: 17px;
+    width: 17px;
+  }
+
+  form .button .error{
+    margin: 15px;
+    font: normal normal normal 16px/30px Arial;
+    color: #9a2626;
   }
    .user-details .input-box input:focus,
    .user-details .input-box input:valid,
@@ -144,4 +184,3 @@
        flex-direction: column;
      }
    }
-   
