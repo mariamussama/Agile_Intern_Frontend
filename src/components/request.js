@@ -99,33 +99,33 @@ function Request() {
         <div class="user-details">
           <div class="input-box">
             <span class="details"><img src={require('./images/Name.jpeg')} alt="Full name"/> </span>
-            <input type="text" placeholder="Contact Person Name" required ref={NameInputRef}></input>
+            <input type="text" placeholder="Contact Person Name*" required ref={NameInputRef}></input>
           </div>
           <div class="input-box">
             <span class="details"><img src={require('./images/Email.jpeg')} alt="Email"/> </span>
-            <input type="text" placeholder="Contact Person Email" required ref={EmailInputRef}></input>
+            <input type="text" placeholder="Contact Person Email*" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"required ref={EmailInputRef}></input>
           </div>
           <div class="input-box">
             <span class="details"><img src={require('./images/address.jpeg')}alt="address"/> </span>
-            <input type="text" placeholder="Address"  required ref={AddressInputRef}></input>
+            <input type="text" placeholder="Address*"  required ref={AddressInputRef}></input>
 
           </div>
           <div class="input-box">
             <span class="details"><img src={require('./images/Landline.jpeg')}alt="Landline"/> </span>
-            <input type="text" placeholder="Land Line" required ref={LandlineInputRef}></input>
+            <input type="text" placeholder="Land Line" pattern="[+]?\d+(?:[.,]\d+)?" ref={LandlineInputRef}></input>
           </div>
           <div class="input-box">
             <span class="details"><img src={require('./images/Phone.jpeg')} alt="Phone"/> </span>
-            <input type="text" placeholder="Moblie" required ref={MobileInputRef}></input>
+            <input type="text" placeholder="Moblie*"pattern="[+]?\d+(?:[.,]\d+)?" required ref={MobileInputRef}></input>
           </div>
           <div class="input-box">
             <span class="details"><img src={require('./images/Budget.jpeg')} alt="Full name"/> </span>
-            <input type="text" placeholder="Budget                                                                LE" required ref={BudgetInputRef}></input>
+            <input type="text" pattern='[0-9]*'placeholder="Budget*                                                                LE" pattern="[0-9]*(-)?" required ref={BudgetInputRef}></input>
           </div>
         <div class="input-box">
           <span class="details"><img src={require('./images/Language.jpeg')} alt="Full name"/> </span>
           <select required id='Languages' ref={LanguageInputRef}  className='select'>
-            <option value="">Prefered Language</option>
+            <option value="">Prefered Language*</option>
             <option value='Arabic'> Arabic</option>
             <option value='English'> English</option>
           </select>
@@ -133,7 +133,7 @@ function Request() {
       <div class="input-box">
         <span class="details"><img src={require('./images/Kids.jpeg')}alt="Full name"/> </span>
         <select required id='ageRange' ref={KidsInputRef}  className='select'>
-            <option value="">Kids Age Group</option>
+            <option value="">Kids Age Group*</option>
             <option value='0-2'> 0-2</option>
             <option value='3-5'> 3-5</option>
             <option value='6-10'> 6-10</option>
@@ -142,14 +142,14 @@ function Request() {
       </div>
       <div class="input-box">
         <span class="details"><img src={require('./images/Calender.jpeg')} alt="Full name" position='absolute'/> </span>
-        <input type="text" className="Date" placeholder='Starting Day'
+        <input type="text" className="Date" placeholder='Starting Day*'
         onFocus={() => (DateInputRef.current.type = "date")} 
         onBlur={() => (DateInputRef.current.type = "text")}
         required  ref={DateInputRef}></input>
       </div>
       </div>
       <div  className='Days' required>
-        <div className='title'>Select Working Days</div>
+        <div className='title'>Select Working Days*</div>
       <label>
           <input type="checkbox" value='Saturday' ref={DaysInputRef[0]} checked={check(0)}/> Saturday
       </label>
