@@ -18,7 +18,7 @@ function Done() {
         We have successfully received your request and we will contact you soon
         </div>
         <div className='Recieved'>
-          <Recieved width="1200" height="600" viewBox='0 0 350 450'/>
+          <Recieved width="1100" height="600" viewBox='0 0 350 450'/>
         </div>
         <button className='Return' onClick={routeChange} >Return Home</button>
     </div>

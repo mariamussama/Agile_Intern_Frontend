@@ -10,13 +10,9 @@ function nav_bar() {
     <li>
       <a href="/">Home</a>
       <a href="/req">Find Helper</a>
-      <Popup trigger={<href className="popup"> About Us</href>} >
-      <div>Popup content here !!</div>
-      </Popup>
-      <a href="">Contact Us</a>
-      <Popup trigger={<href className="popup"> Terms & Conditions</href>} >
-      <div>Terms & Conditions !!</div>
-      </Popup>
+      <a href="/about_us">About Us</a>
+      <a href="/contact_us">Contact Us</a>
+      <a href="/terms">Terms & Conditions</a>
     </li>
   </div>
 

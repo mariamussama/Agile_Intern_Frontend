@@ -1,0 +1,31 @@
+.Contact_us{
+    top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 1080px;
+    position: static;
+  }
+    .Contact_us .container .title{
+        font: normal normal bold 50px/64px Arial;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        width:550px;
+        height: 100px;
+        position: absolute;
+        margin-top: 170px;
+        left: 1000px;
+        text-decoration: none;
+    }
+    .Contact_us .container .contact-content{
+        font: normal normal 30px/64px Arial;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        width:600px;
+        height: 100px;
+        position: absolute;
+        margin-top: 270px;
+        left: 980px;
+        text-decoration: none;
+    }

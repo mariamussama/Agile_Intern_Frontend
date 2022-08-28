@@ -1,0 +1,33 @@
+.Terms{
+    top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 1080px;
+    position: static;
+  }
+
+  .Terms .container .title{
+      font: normal normal bold 50px/64px Arial;
+      letter-spacing: 0px;
+      color: #FFFFFF;
+      opacity: 1;
+      width:550px;
+      height: 100px;
+      position: absolute;
+      margin-top: 170px;
+      left: 1100px;
+      text-decoration: none;
+    }
+    .Terms .container .terms-content{
+      text-align: left;
+      font: normal normal  30px/64px Arial;
+      letter-spacing: 0px;
+      color: #FFFFFF;
+      opacity: 1;
+      width:600px;
+      height: 100px;
+      position: absolute;
+      margin-top: 270px;
+      left: 1190px;
+      text-decoration: none;
+    }
