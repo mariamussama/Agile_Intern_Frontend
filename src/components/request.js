@@ -5,10 +5,12 @@ import ReactDOM from 'react-dom/client';
 import 'react-datepicker/dist/react-datepicker.css';
 import{useNavigate} from "react-router-dom";
 import{useRef} from 'react';
-
-
+import axios from 'axios';
+export const getPosts=()=>{
+return axios.post ('http://bsbackend.agiletz.com/api/v1/client', data);
+}
+var data={name:'',email:'',address:'',language:'',ageGroup:'',budget:0,landline:0,mobilePhone:0,date:'',workingDays:[]};
 function Request() {
-  
   let navigate = useNavigate();
   const [errorMessage, setErrorMessage] = React.useState("");
   const DaysInputRef = [
@@ -63,21 +65,24 @@ function Request() {
     }
     if(valid)
     {
-      const data={
-        Name: enteredName,
-        Email: enteredEmail,
-        Address:enteredAddress,
-        Landline:enteredLandline,
-        Budget:enteredBudget,
-        Mobile:enteredMobile,
-        Language:enteredLanguage,
-        Kids:enteredKids,
-        Date:enteredDate,
-        Days:enteredDays,
+        data={
+        name: enteredName,
+        email: enteredEmail,
+        address:enteredAddress,
+        language:enteredLanguage,
+        ageGroup:enteredKids,
+        budget:enteredBudget,
+        landline:enteredLandline,
+        mobilePhone:enteredMobile,
+        date:enteredDate,
+        workingDays:enteredDays,
       };
   
       console.log(data);
       navigate('/done');
+      getPosts().then((response )=>{
+        console.log('response is:',response);
+    }).catch((err)=>console.log(err));
     }
     else setErrorMessage("Please select atleast one day!")
 
@@ -112,15 +117,15 @@ function Request() {
           </div>
           <div class="input-box">
             <span class="details"><img src={require('./images/Landline.jpeg')}alt="Landline"/> </span>
-            <input type="text" placeholder="Land Line" pattern="[+]?\d+(?:[.,]\d+)?" ref={LandlineInputRef}></input>
+            <input type="text" placeholder="Land Line"  pattern="[+]?\d+(?:[.,]\d+)?" ref={LandlineInputRef}></input>
           </div>
           <div class="input-box">
             <span class="details"><img src={require('./images/Phone.jpeg')} alt="Phone"/> </span>
-            <input type="text" placeholder="Moblie*"pattern="[+]?\d+(?:[.,]\d+)?" required ref={MobileInputRef}></input>
+            <input type="text" placeholder="Moblie*" pattern="[+]?\d+(?:[.,]\d+)?" required ref={MobileInputRef}></input>
           </div>
           <div class="input-box">
             <span class="details"><img src={require('./images/Budget.jpeg')} alt="Full name"/> </span>
-            <input type="text" pattern='[0-9]*'placeholder="Budget*                                                                LE" pattern="[0-9]*(-)?" required ref={BudgetInputRef}></input>
+            <input type="text" placeholder="Budget*                                                                LE" pattern="[0-9]*" required ref={BudgetInputRef}></input>
           </div>
         <div class="input-box">
           <span class="details"><img src={require('./images/Language.jpeg')} alt="Full name"/> </span>
