@@ -1,7 +1,6 @@
 import React from 'react';
 import Nav_bar from './nav_bar';
 import './request.css';
-import ReactDOM from 'react-dom/client';
 import 'react-datepicker/dist/react-datepicker.css';
 import{useNavigate} from "react-router-dom";
 import{useRef} from 'react';
@@ -90,53 +89,53 @@ function Request() {
   return (
     <div className="Request">
       <Nav_bar/>
-      <div class='req_title'>
+      <div className='req_title'>
         Request a Nanny
       </div>
-      <div class='req_subtitle'>
+      <div className='req_subtitle'>
         You are just few steps away!
       </div>
-      <div class='req_container'>
-        <div class='guide'>
+      <div className='req_container'>
+        <div className='guide'>
         Please fill all the fileds are required
         </div>
               <form action="#" onSubmit={submitHandler}>
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details"><img src={require('./images/Name.jpeg')} alt="Full name"/> </span>
+        <div className="user-details">
+          <div className="input-box">
+            <span className="details"><img src={require('./images/Name.jpeg')} alt="Full name"/> </span>
             <input type="text" placeholder="Contact Person Name*" required ref={NameInputRef}></input>
           </div>
-          <div class="input-box">
-            <span class="details"><img src={require('./images/Email.jpeg')} alt="Email"/> </span>
+          <div className="input-box">
+            <span className="details"><img src={require('./images/Email.jpeg')} alt="Email"/> </span>
             <input type="text" placeholder="Contact Person Email*" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"required ref={EmailInputRef}></input>
           </div>
-          <div class="input-box">
-            <span class="details"><img src={require('./images/address.jpeg')}alt="address"/> </span>
+          <div className="input-box">
+            <span className="details"><img src={require('./images/address.jpeg')}alt="address"/> </span>
             <input type="text" placeholder="Address*"  required ref={AddressInputRef}></input>
 
           </div>
-          <div class="input-box">
-            <span class="details"><img src={require('./images/Landline.jpeg')}alt="Landline"/> </span>
+          <div className="input-box">
+            <span className="details"><img src={require('./images/Landline.jpeg')}alt="Landline"/> </span>
             <input type="text" placeholder="Land Line"  pattern="[+]?\d+(?:[.,]\d+)?" ref={LandlineInputRef}></input>
           </div>
-          <div class="input-box">
-            <span class="details"><img src={require('./images/Phone.jpeg')} alt="Phone"/> </span>
+          <div className="input-box">
+            <span className="details"><img src={require('./images/Phone.jpeg')} alt="Phone"/> </span>
             <input type="text" placeholder="Moblie*" pattern="[+]?\d+(?:[.,]\d+)?" required ref={MobileInputRef}></input>
           </div>
-          <div class="input-box">
-            <span class="details"><img src={require('./images/Budget.jpeg')} alt="Full name"/> </span>
+          <div className="input-box">
+            <span className="details"><img src={require('./images/Budget.jpeg')} alt="Full name"/> </span>
             <input type="text" placeholder="Budget*                                                                LE" pattern="[0-9]*" required ref={BudgetInputRef}></input>
           </div>
-        <div class="input-box">
-          <span class="details"><img src={require('./images/Language.jpeg')} alt="Full name"/> </span>
+        <div className="input-box">
+          <span className="details"><img src={require('./images/Language.jpeg')} alt="Full name"/> </span>
           <select required id='Languages' ref={LanguageInputRef}  className='select'>
             <option value="">Prefered Language*</option>
             <option value='Arabic'> Arabic</option>
             <option value='English'> English</option>
           </select>
         </div>
-      <div class="input-box">
-        <span class="details"><img src={require('./images/Kids.jpeg')}alt="Full name"/> </span>
+      <div className="input-box">
+        <span className="details"><img src={require('./images/Kids.jpeg')}alt="Full name"/> </span>
         <select required id='ageRange' ref={KidsInputRef}  className='select'>
             <option value="">Kids Age Group*</option>
             <option value='0-2'> 0-2</option>
@@ -145,8 +144,8 @@ function Request() {
             <option value='10-12'> 10-12</option>
           </select>
       </div>
-      <div class="input-box">
-        <span class="details"><img src={require('./images/Calender.jpeg')} alt="Full name" position='absolute'/> </span>
+      <div className="input-box">
+        <span className="details"><img src={require('./images/Calender.jpeg')} alt="Full name" position='absolute'/> </span>
         <input type="text" className="Date" placeholder='Starting Day*'
         onFocus={() => (DateInputRef.current.type = "date")} 
         onBlur={() => (DateInputRef.current.type = "text")}
@@ -177,7 +176,7 @@ function Request() {
           <input type="checkbox" value='Friday' ref={DaysInputRef[6]} checked={check(6)}/> Friday
       </label>
   </div>
-      <div class="button"  >
+      <div className="button"  >
       {errorMessage && (<p className="error"> {errorMessage} </p>)}
     <input type="submit" value="Request Now"></input>
   </div>

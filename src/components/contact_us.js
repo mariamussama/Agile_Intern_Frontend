@@ -7,7 +7,7 @@ function Contact_us() {
   return (
     <div className="Contact_us">
       <Nav_bar/>
-          <div class="container">
+          <div className="container">
           <div className='Logo-box'>
           <Logo viewBox='-50 -50 700 700'/></div>
           <div className='title'>Contact Us</div>

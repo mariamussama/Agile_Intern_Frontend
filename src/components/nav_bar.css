@@ -18,3 +18,53 @@
       text-decoration: none;
       
     }
+    .nav_bar .user{
+      margin-right: 880px;
+      width: 200px;
+      height: 70px;
+      display: inline;
+    }
+    .nav_bar .user .icon-img{
+      background: transparent;
+      width: 35px;
+      height: 35px;
+      margin-top: 5px;
+    }
+    .popup{
+      letter-spacing: var(--unnamed-character-spacing-0);
+      font: normal normal normal 20px/25px Arial;
+      margin-top: 18px;
+      padding-left: 10px;
+      letter-spacing: 0px;
+      color: #FFFFFF;
+      opacity: 1;
+      text-decoration: none;
+      cursor: pointer;
+      position: absolute;
+      text-decoration-line: underline;
+    }
+    .popup-content {
+      margin: auto;
+      background: rgb(255, 255, 255);
+      width: 50%;
+      padding: 5px;
+      text-align: center;
+      font: normal normal normal 15px/20px Arial;
+      letter-spacing: 0px;
+      color: #379abd;
+      opacity: 1;
+      cursor: pointer;
+      border-radius: 10px;
+      border: none;
+      opacity: 1;
+    }
+    .popup-arrow {
+      color: rgb(255, 255, 255);
+      width: 20px;
+      height: 210px;
+      margin-top: -100px;
+    }
+    [role='tooltip'].popup-content {
+      width: 200px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+    }

@@ -2,7 +2,6 @@ import React from 'react';
 import './home.css';
 import Nav_bar from './nav_bar';
 import { ReactComponent as Logo } from './images/logo.svg';
-import ReactDOM from 'react-dom/client';
 import{useNavigate} from "react-router-dom";
 
 function Home() {
@@ -14,7 +13,7 @@ function Home() {
   return (
     <div className="Home">
       <Nav_bar/>
-          <div class="container">
+          <div className="container">
           <div className='Logo-box'>
           <Logo viewBox='-50 -50 700 700'/></div>
           <div className='title'>Looking for a Nanny ?</div>

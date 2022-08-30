@@ -2,7 +2,6 @@ import React from 'react';
 import Nav_bar from './nav_bar';
 import './done.css';
 import { ReactComponent as Recieved } from './images/Recieved.svg';
-import ReactDOM from 'react-dom/client';
 import{useNavigate} from 'react-router-dom';
 
 function Done() {

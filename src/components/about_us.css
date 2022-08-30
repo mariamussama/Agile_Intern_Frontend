@@ -5,16 +5,7 @@
   height: 1080px;
     position: static;
   }
-  .About_us  .container .Logo-box{
-      background: transparent;
-      width:1000px;
-      opacity: 1;
-      margin:0px;
-      display:inline-block;
-      position: absolute;
-      text-decoration: none;
-      left: 100px;
-    }
+
     .About_us .container .title{
       font: normal normal bold 50px/64px Arial;
       letter-spacing: 0px;
@@ -24,11 +15,13 @@
       height: 100px;
       position: absolute;
       margin-top: 170px;
-      left: 1000px;
+      left: 1200px;
       text-decoration: none;
     }
     .About_us .container .about-content{
       font: normal normal 30px/64px Arial;
+      text-align: left;
+      line-height: 45px;
       letter-spacing: 0px;
       color: #FFFFFF;
       opacity: 1;
@@ -36,6 +29,6 @@
       height: 100px;
       position: absolute;
       margin-top: 270px;
-      left: 1020px;
+      left: 1350px;
       text-decoration: none;
     }
